@@ -5,12 +5,22 @@ extends CharacterBody3D
 # The downward acceleration when in the air, in meters per second squared.
 @export var fall_acceleration = 75
 
-var walking_sound_threshold
-var sound_cooldown
+@onready var sprite = $AnimatedSprite3D;
 
 var is_moving
 var target_velocity = Vector3.ZERO
-@onready var sprite = $AnimatedSprite3D;
+
+func _ready():
+	sprite.connect("frame_changed",_on_animation_started)
+
+func _on_animation_started():
+		if sprite.frame == 1:
+			$AudioStreamPlayer3D.set_pitch_scale(randf_range(0.5,1.5))
+			$AudioStreamPlayer3D.play()
+			print($AudioStreamPlayer3D.pitch_scale)
+
+
+
 
 
 func _physics_process(delta):
@@ -18,7 +28,7 @@ func _physics_process(delta):
 	sprite.speed_scale = speed
 	
 	if Input.is_action_pressed("ui_accept"):
-		speed = 1.3
+		speed = 1.7
 	else:
 		speed = 0.7
 	
@@ -40,6 +50,7 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("ui_up"):
 		direction.x -= 1
 		direction.z -= 1
+		sprite.play("up-walking")
 		is_moving = true
 	else:
 		is_moving = false
@@ -47,31 +58,17 @@ func _physics_process(delta):
 	if direction != Vector3.ZERO:
 		direction = direction.normalized()
 		
-		
-
 	# Ground Velocity
 	target_velocity.x = direction.x * speed
 	target_velocity.z = direction.z * speed
 
+
+
+	
+	
 	# Vertical Velocity
 	if not is_on_floor(): # If in the air, fall towards the floor. Literally gravity
 		target_velocity.y = target_velocity.y - (fall_acceleration * delta)
-
-@onready var audio_player = $AudioStreamPlayer3D
-@onready var timer = $Timer
-
-func _ready():
-	timer.wait_time = 1.0  # set timer to 1 second
-	timer.connect()
-	timer.start()
-
-func _on_timer_timeout():
-	audio_player.play()
-
-
-	if sprite.frame == 1:
-		_on_timer_timeout()
-
 
 	if !is_moving:
 		sprite.stop()  # Stop the currently playing animation
@@ -80,3 +77,5 @@ func _on_timer_timeout():
 	# Moving the Character
 	velocity = target_velocity
 	move_and_slide()
+	
+					

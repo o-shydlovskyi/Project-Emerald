@@ -1,16 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://pv6u5hvlhquj"]
+[gd_scene load_steps=6 format=3 uid="uid://pv6u5hvlhquj"]
 
 [ext_resource type="SpriteFrames" uid="uid://br52160fsdlj0" path="res://Other Resources/wizard-ani-frames.tres" id="2_vh4ev"]
-[ext_resource type="AudioStream" uid="uid://cts5pab0vicyq" path="res://Sounds/walk.wav" id="3_067ge"]
 [ext_resource type="Script" path="res://Maps/controls.gd" id="3_b8yi7"]
+[ext_resource type="AudioStream" uid="uid://cts5pab0vicyq" path="res://Sounds/walk.wav" id="3_w6r76"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ngs2w"]
-size = Vector3(1.96289, 0.142578, 1.91184)
+size = Vector3(2.41201, 0.142578, 2.2309)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wjr2u"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_trxes"]
-size = Vector3(0.131104, 0.154297, 0.120117)
 
 [node name="world" type="Node3D"]
 
@@ -18,7 +15,7 @@ size = Vector3(0.131104, 0.154297, 0.120117)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.227, 0)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00310051, -0.0562949, 0.0476296)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0372889, 0.0754142, 0.200425)
 shape = SubResource("BoxShape3D_ngs2w")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
@@ -26,13 +23,9 @@ mesh = SubResource("PlaneMesh_wjr2u")
 skeleton = NodePath("../..")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.997693, 1.5957e-09, 0.0678934, -0.036254, 0.845495, 0.532751, -0.0574035, -0.533983, 0.843544, 0, 0, 0.186532)
-shadow_enabled = true
-shadow_bias = 1.052
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.14764, 0)
-wall_min_slide_angle = 0.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.424396, 0)
 script = ExtResource("3_b8yi7")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
@@ -45,18 +38,19 @@ near = 0.001
 far = 4040.05
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D"]
-gi_mode = 0
 billboard = 1
 shaded = true
 texture_filter = 0
 sprite_frames = ExtResource("2_vh4ev")
-animation = &"up-walking"
+animation = &"right-walking"
 speed_scale = 0.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00352609, 0, 0)
-shape = SubResource("BoxShape3D_trxes")
+shape = SubResource("BoxShape3D_ngs2w")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CharacterBody3D"]
-stream = ExtResource("3_067ge")
+stream = ExtResource("3_w6r76")
+attenuation_model = 3
 unit_size = 47.4
+
+[node name="Timer" type="Timer" parent="CharacterBody3D"]

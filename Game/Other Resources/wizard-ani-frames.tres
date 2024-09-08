@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=14 format=3 uid="uid://br52160fsdlj0"]
+[gd_resource type="SpriteFrames" load_steps=18 format=3 uid="uid://br52160fsdlj0"]
 
 [ext_resource type="Texture2D" uid="uid://5odi8nun42kh" path="res://Textures/wizard-sheet.png" id="1_0yr4k"]
 
@@ -49,6 +49,22 @@ region = Rect2(0, 32, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_psxf5"]
 atlas = ExtResource("1_0yr4k")
 region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvm5e"]
+atlas = ExtResource("1_0yr4k")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e24u"]
+atlas = ExtResource("1_0yr4k")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yiudw"]
+atlas = ExtResource("1_0yr4k")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvt8d"]
+atlas = ExtResource("1_0yr4k")
+region = Rect2(48, 48, 16, 16)
 
 [resource]
 animations = [{
@@ -101,5 +117,22 @@ animations = [{
 }],
 "loop": true,
 "name": &"right-walking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvm5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e24u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yiudw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvt8d")
+}],
+"loop": true,
+"name": &"up-walking",
 "speed": 5.0
 }]
