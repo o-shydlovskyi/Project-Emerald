@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://cgvcvtxq5gck3"]
+
+[ext_resource type="Script" path="res://controls.gd" id="1_fp5q6"]
+[ext_resource type="SpriteFrames" uid="uid://br52160fsdlj0" path="res://Other Resources/wizard-ani-frames.tres" id="2_d2850"]
+[ext_resource type="AudioStream" uid="uid://cts5pab0vicyq" path="res://Sounds/walk.wav" id="3_jln5j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_trxes"]
+size = Vector3(0.688477, 0.694336, 0.713867)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wt24d"]
+albedo_color = Color(0.439145, 0.258198, 0.0612618, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_888td"]
+material = SubResource("StandardMaterial3D_wt24d")
+size = Vector2(0.4, 0.4)
+orientation = 2
+
+[node name="PlayableCharacter" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.14764, 0)
+wall_min_slide_angle = 0.0
+script = ExtResource("1_fp5q6")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, -0.454519, 0.541675, 0, 0.766044, 0.642787, -0.707107, -0.454519, 0.541675, 0.75, 14, 0.75)
+visibility_parent = NodePath("../AnimatedSprite3D")
+v_offset = -10.0
+projection = 1
+current = true
+size = 8.0
+far = 40.0
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+gi_mode = 0
+billboard = 1
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = ExtResource("2_d2850")
+animation = &"up-walking"
+speed_scale = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0375977, 0)
+shape = SubResource("BoxShape3D_trxes")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_jln5j")
+unit_size = 47.4
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, -0.0946128, 0)
+transparency = 0.53
+cast_shadow = 0
+amount = 6
+lifetime = 0.5
+randomness = 0.5
+mesh = SubResource("PlaneMesh_888td")
+emission_shape = 1
+emission_sphere_radius = 0.4
+direction = Vector3(1, 1.14, 0)
+spread = 0.0
+gravity = Vector3(0, -4.265, 0)
+scale_amount_min = 0.2
+scale_amount_max = 0.3
+color = Color(0.408066, 0.226382, 0.0430208, 1)
