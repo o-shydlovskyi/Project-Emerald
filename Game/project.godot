@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 movie_writer/movie_file="C:/Users/Олег/Documents/movie.avi"
 
+[gui]
+
+theme/custom_font="res://Other assets/pixelmix.ttf"
+
 [importer_defaults]
 
 2d_array_texture={

@@ -1,9 +1,11 @@
 class_name PlayableChar
+
 extends CharacterBody3D
 
-@onready var playableClasses = load("res://Other Resources/classes.tres")
-
+@onready var playableClasses = load("res://Other Resources/classes-lib.tres")
 @onready var sprite = $AnimatedSprite3D
+
+
 
 # Declaring possible Classes
 @onready var fantasy_classes = {
@@ -37,10 +39,11 @@ extends CharacterBody3D
 
 func _class_selection(playableClassIndex:int):
 	var keys = fantasy_classes.keys()
-	currentClassID = playableClassIndex
+	
 	var playableClassName = keys[playableClassIndex]
 	
 	#Assigning attributes
+	currentClassID = playableClassIndex
 	currentHealth = fantasy_classes[playableClassName].max_health
 	maxHealth = fantasy_classes[playableClassName].max_health
 	charSpeed = fantasy_classes[playableClassName].speed
@@ -57,14 +60,20 @@ var currentClassID
 var charSpeed = 2
 var fall_acceleration = 25
 
+var inventoryCapacity = 6
+var inventoryContents: Dictionary
+
 var is_moving
 var target_velocity = Vector3.ZERO
 
 func _ready():
 	_class_selection(2)
-	print()
+	print("Output",playableClasses)
 	sprite.connect("frame_changed",_on_animation_started)
 	$"../UI/ItemList".connect("item_selected",_class_selection) #Signal from selector
+	
+	var tween = get_tree().create_tween()
+	tween.tween_property($Camera3D, "size", 8, 1).set_trans(Tween.TRANS_SINE)
 
 	
 
@@ -80,7 +89,6 @@ func _on_animation_started():
 func _physics_process(delta):
 	var direction = Vector3.ZERO
 	sprite.speed_scale = charSpeed
-	
 	if Input.is_action_pressed("move_right"):
 		direction.x += 1
 		direction.z -= 1

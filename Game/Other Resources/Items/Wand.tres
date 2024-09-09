@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dg4aqw8x5cslu"]
+
+[ext_resource type="Script" path="res://Other Resources/ItemData.gd" id="1_8ftl4"]
+[ext_resource type="Texture2D" uid="uid://bsuwrr5g6hdjw" path="res://Textures/wand_01.png" id="2_n74v6"]
+
+[resource]
+script = ExtResource("1_8ftl4")
+type = 0
+name = "Magic Wand"
+texture = ExtResource("2_n74v6")
+description = "It is super cool, trust me"
+is_stackable = false
