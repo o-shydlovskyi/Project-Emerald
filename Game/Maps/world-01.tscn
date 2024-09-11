@@ -1,24 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://pv6u5hvlhquj"]
+[gd_scene load_steps=7 format=3 uid="uid://pv6u5hvlhquj"]
 
 [ext_resource type="PackedScene" uid="uid://cgvcvtxq5gck3" path="res://Scenes/PlayableChar.tscn" id="1_l61d3"]
+[ext_resource type="Theme" uid="uid://t5txhi3apmdk" path="res://Other Resources/ui-kit.tres" id="2_34wwu"]
 [ext_resource type="Script" path="res://uiHandler.gd" id="2_orelf"]
 [ext_resource type="PackedScene" uid="uid://q0i2ct2r6bkf" path="res://landscape.gltf" id="3_3qucl"]
 [ext_resource type="Texture2D" uid="uid://c8fgqbmhfu11v" path="res://Textures/backpack.png" id="3_cujr7"]
+[ext_resource type="Script" path="res://Other Resources/PlayerCharacter.gd" id="6_s2ckv"]
 
 [node name="world" type="Node3D"]
 
 [node name="PlayableCharacter" parent="." instance=ExtResource("1_l61d3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.94, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.59668, -0.94, 0)
+visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="InvGrid" type="GridContainer" parent="CanvasLayer"]
 unique_name_in_owner = true
-visible = false
-offset_left = 768.0
-offset_top = 8.0
-offset_right = 1080.0
-offset_bottom = 248.0
+anchors_preset = -1
+anchor_top = 0.315
+anchor_right = 0.271
+anchor_bottom = 0.685
+offset_top = -0.12001
+offset_right = -0.192017
+offset_bottom = 0.119965
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+theme = ExtResource("2_34wwu")
 columns = 4
 
 [node name="UI" type="Control" parent="."]
@@ -74,3 +83,12 @@ shadow_blur = 0.8
 directional_shadow_mode = 0
 directional_shadow_fade_start = 0.0
 directional_shadow_pancake_size = 0.0
+
+[node name="PlayerCharacter" type="CharacterBody3D" parent="."]
+script = ExtResource("6_s2ckv")
+playerName = null
+playerLvl = null
+playerClass = null
+playerHP = null
+playerXP = null
+playerInv = null

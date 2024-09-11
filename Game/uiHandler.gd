@@ -1,11 +1,11 @@
 extends Control
 
-
-
 @export var InvSize = 15
 var itemsLoad = [
 	"res://Other Resources/Items/Wand.tres",
+	"res://Other Resources/Items/Poisoned-Sword.tres"
 ]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -18,14 +18,13 @@ func _ready() -> void:
 	
 	for i in InvSize:
 		var slot := InventorySlot.new()
-		slot.init(ItemData.Type.Weapon, Vector2(64,64))
+		slot.init(ItemData.Type.Weapon, Vector2(16,16))
 		%InvGrid.add_child(slot)
 		
 	for i in itemsLoad.size():
 		var item := InventoryItem.new()
 		item.init(load(itemsLoad[i]))
 		%InvGrid.get_child(i).add_child(item)
-	
 
 func _output(state: bool):
 	if state:
@@ -34,12 +33,9 @@ func _output(state: bool):
 	else:
 		%InvGrid.hide()
 		print("Hide")
-	
-	
-	
-
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+	

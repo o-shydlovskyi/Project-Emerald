@@ -15,13 +15,20 @@ run/main_scene="res://Maps/world-01.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
 [editor]
 
 movie_writer/movie_file="C:/Users/Олег/Documents/movie.avi"
 
 [gui]
 
+theme/custom="res://Other Resources/ui-kit.tres"
 theme/custom_font="res://Other assets/pixelmix.ttf"
+theme/default_font_hinting=0
 
 [importer_defaults]
 

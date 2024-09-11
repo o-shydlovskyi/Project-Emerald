@@ -1,0 +1,27 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://t5txhi3apmdk"]
+
+[ext_resource type="Texture2D" uid="uid://dgcy1hsr20r3g" path="res://Textures/slot-texture.png" id="1_t7j6c"]
+[ext_resource type="FontFile" uid="uid://bk22c1oo3dogd" path="res://Other assets/pixelmix.ttf" id="2_2vrie"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_144r8"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("1_t7j6c")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[resource]
+default_font = ExtResource("2_2vrie")
+default_font_size = 12
+Panel/constants/fldfkl = 4
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_144r8")
+TooltipLabel/font_sizes/font_size = 8
+TooltipPanel/font_sizes/title_font_size = 8
