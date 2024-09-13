@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="ClassData" load_steps=6 format=3 uid="uid://bqqftavel1ex7"]
 
 [ext_resource type="Script" path="res://Scripts/ClassData.gd" id="1_xjo12"]
-[ext_resource type="Resource" uid="uid://bgtfvi34db85a" path="res://Other Resources/Poisoned-Sword.tres" id="2_20mag"]
 [ext_resource type="SpriteFrames" uid="uid://br52160fsdlj0" path="res://Other Resources/wizard-ani-frames.tres" id="2_ouqst"]
 [ext_resource type="Script" path="res://Scripts/ItemData.gd" id="2_r31hv"]
-[ext_resource type="Resource" uid="uid://dg4aqw8x5cslu" path="res://Other Resources/Items/Wand.tres" id="3_k0wsu"]
+[ext_resource type="Resource" uid="uid://dg4aqw8x5cslu" path="res://Resources/Items/Wand.tres" id="3_m2tbc"]
+[ext_resource type="Resource" uid="uid://cuuegag8qrlt7" path="res://Resources/Items/PotionHPSmall.tres" id="4_mdmim"]
 
 [resource]
 script = ExtResource("1_xjo12")
@@ -14,4 +14,4 @@ texture = ExtResource("2_ouqst")
 strength = 3
 intelligence = 5
 agility = 3
-startItems = Array[ExtResource("2_r31hv")]([ExtResource("3_k0wsu"), ExtResource("2_20mag"), null])
+startItems = Array[ExtResource("2_r31hv")]([ExtResource("3_m2tbc"), ExtResource("4_mdmim"), null])

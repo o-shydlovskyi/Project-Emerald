@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jywi5nfsc8fp"
-path="res://.godot/imported/slot-texture-export.png-3368526dcf97b1ba41ac89c4978b3132.ctex"
+uid="uid://ckhl3afe6nxgw"
+path="res://.godot/imported/panel-texture.png-8f629c60a02a1e086fe8fb567b2af247.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/slot-texture-export.png"
-dest_files=["res://.godot/imported/slot-texture-export.png-3368526dcf97b1ba41ac89c4978b3132.ctex"]
+source_file="res://Textures/panel-texture.png"
+dest_files=["res://.godot/imported/panel-texture.png-8f629c60a02a1e086fe8fb567b2af247.ctex"]
 
 [params]
 

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cuuegag8qrlt7"]
+
+[ext_resource type="Script" path="res://Scripts/ItemData.gd" id="1_j6fb5"]
+[ext_resource type="Texture2D" uid="uid://3cpdw5l4er4i" path="res://Textures/potion_01.png" id="2_5wxbj"]
+
+[resource]
+script = ExtResource("1_j6fb5")
+type = 2
+name = "Potion"
+texture = ExtResource("2_5wxbj")
+description = "Potion that heals small amount of HP"
+stackable = true

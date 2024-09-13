@@ -14,6 +14,7 @@ func _ready():
 	if data.stackable == true:
 		var label = Label.new()
 		label.text = "1"
+		label.set_theme_type_variation("HeaderSmall")
 		add_child(label)
 
 

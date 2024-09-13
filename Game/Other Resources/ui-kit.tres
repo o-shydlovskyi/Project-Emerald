@@ -1,7 +1,24 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://t5txhi3apmdk"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://t5txhi3apmdk"]
 
+[ext_resource type="Texture2D" uid="uid://ckhl3afe6nxgw" path="res://Textures/panel-texture.png" id="1_kw1va"]
 [ext_resource type="Texture2D" uid="uid://dgcy1hsr20r3g" path="res://Textures/slot-texture.png" id="1_t7j6c"]
 [ext_resource type="FontFile" uid="uid://bk22c1oo3dogd" path="res://Other assets/pixelmix.ttf" id="2_2vrie"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u672y"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_63wbb"]
+texture = ExtResource("1_kw1va")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w8nc8"]
+texture = ExtResource("1_kw1va")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_144r8"]
 content_margin_left = 0.0
@@ -9,10 +26,10 @@ content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
 texture = ExtResource("1_t7j6c")
-texture_margin_left = 4.0
-texture_margin_top = 4.0
-texture_margin_right = 1.0
-texture_margin_bottom = 1.0
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
 expand_margin_left = 1.0
 expand_margin_top = 1.0
 expand_margin_right = 1.0
@@ -21,7 +38,19 @@ expand_margin_bottom = 1.0
 [resource]
 default_font = ExtResource("2_2vrie")
 default_font_size = 12
-Panel/constants/fldfkl = 4
+FlowContainer/styles/Panel = SubResource("StyleBoxFlat_u672y")
+GridContainer/styles/Panel = SubResource("StyleBoxTexture_63wbb")
+HeaderSmall/colors/font_color = Color(1, 1, 1, 1)
+HeaderSmall/colors/font_outline_color = Color(0, 0, 0, 1)
+HeaderSmall/constants/outline_size = 1
+HeaderSmall/font_sizes/font_size = 7
+Panel/styles/panel = SubResource("StyleBoxTexture_w8nc8")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_144r8")
-TooltipLabel/font_sizes/font_size = 8
-TooltipPanel/font_sizes/title_font_size = 8
+TooltipLabel/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+TooltipLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+TooltipLabel/colors/font_shadow_color = Color(0, 0, 0, 0)
+TooltipLabel/constants/outline_size = 0
+TooltipLabel/constants/shadow_offset_x = 1
+TooltipLabel/constants/shadow_offset_y = 1
+TooltipLabel/font_sizes/font_size = 7
+TooltipLabel/fonts/font = ExtResource("2_2vrie")
