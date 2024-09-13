@@ -11,8 +11,10 @@ func _ready():
 	stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	texture = data.texture
 	tooltip_text = "%s\n%s" % [data.name, data.description]
-	if data.isStackable == true:
-		print("STACKS")
+	if data.stackable == true:
+		var label = Label.new()
+		label.text = "1"
+		add_child(label)
 
 
 func _get_drag_data(at_position:Vector2):

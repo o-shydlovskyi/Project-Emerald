@@ -1,14 +1,15 @@
-class_name ItemData
+class_name ClassData
 extends Resource
 
-enum Type {Weapon, Furniture, Consumable, Cloth}
+enum mainAttribute {Strength,Intelligence,Agility}
 
-
-@export var type: Type
+@export var mmainAttribute: mainAttribute
 @export var name: String
-@export var texture: Texture2D
-@export_multiline var description: String
-@export var isStackable: bool
+@export var texture: SpriteFrames
+@export var strength: int
+@export var intelligence : int
+@export var agility: int
+@export var startItems: Array[ItemData]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

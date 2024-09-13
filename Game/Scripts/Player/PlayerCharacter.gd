@@ -3,14 +3,14 @@ class_name PlayerCharacter
 extends CharacterBody3D
 
 var playerClass: ClassData
-@export var playerName: String
+var playerName: String
+
 var playerLvl: int
 var playerHP: int
 var playerMaxHP: int
 var playerXP: int
-var playerInv: Array
+var inventory: PlayerInventory
 var playerSpeed: int = 2
-
 var playerModel: AnimatedSprite3D
 
 
@@ -20,9 +20,14 @@ func _init():
 	playerClass = preload("res://Other Resources/Wizard.tres") # TEMPORARY, MOVE INTO "Class" AFTER CREATION!!!!!!!!!!
 	playerHP = playerClass.strength * 10
 	playerMaxHP = playerHP
-	playerInv = playerClass.startItems
+	
+	# Populating Inventory
+	
+	inventory = PlayerInventory.new()
+	for i in playerClass.startItems:
+		inventory.add_item(i)
 	_create_model(playerClass.texture)
-	#creating
+	
 
 
 # Called when the node enters the scene tree for the first time.
@@ -94,6 +99,9 @@ func _player_controls(delta):
 	velocity = target_velocity
 	move_and_slide()
 	
+
+
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
