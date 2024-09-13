@@ -1,17 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://pv6u5hvlhquj"]
+[gd_scene load_steps=5 format=3 uid="uid://pv6u5hvlhquj"]
 
-[ext_resource type="PackedScene" uid="uid://cgvcvtxq5gck3" path="res://Scenes/PlayableChar.tscn" id="1_l61d3"]
 [ext_resource type="Theme" uid="uid://t5txhi3apmdk" path="res://Other Resources/ui-kit.tres" id="2_34wwu"]
 [ext_resource type="Script" path="res://uiHandler.gd" id="2_orelf"]
 [ext_resource type="PackedScene" uid="uid://q0i2ct2r6bkf" path="res://landscape.gltf" id="3_3qucl"]
 [ext_resource type="Texture2D" uid="uid://c8fgqbmhfu11v" path="res://Textures/backpack.png" id="3_cujr7"]
-[ext_resource type="Script" path="res://Other Resources/PlayerCharacter.gd" id="6_s2ckv"]
 
 [node name="world" type="Node3D"]
 
-[node name="PlayableCharacter" parent="." instance=ExtResource("1_l61d3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.59668, -0.94, 0)
-visible = false
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, -0.454519, 0.541675, 0, 0.766045, 0.642787, -0.707107, -0.454519, 0.541675, 0.75, 14, 0.75)
+visibility_parent = NodePath("../AnimatedSprite3D")
+v_offset = -10.0
+projection = 1
+current = true
+size = 10.0
+far = 40.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -83,12 +86,3 @@ shadow_blur = 0.8
 directional_shadow_mode = 0
 directional_shadow_fade_start = 0.0
 directional_shadow_pancake_size = 0.0
-
-[node name="PlayerCharacter" type="CharacterBody3D" parent="."]
-script = ExtResource("6_s2ckv")
-playerName = null
-playerLvl = null
-playerClass = null
-playerHP = null
-playerXP = null
-playerInv = null

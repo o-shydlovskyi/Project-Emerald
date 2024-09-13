@@ -9,4 +9,4 @@ type = 0
 name = "Magic Wand"
 texture = ExtResource("2_n74v6")
 description = "It is super cool, trust me"
-is_stackable = false
+isStackable = true

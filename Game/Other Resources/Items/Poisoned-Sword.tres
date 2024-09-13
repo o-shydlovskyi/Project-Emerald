@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_0pc48")
 type = 0
-name = "Magic Wand"
+name = "Poisoned Sword"
 texture = ExtResource("2_ivmm4")
-description = "It is super cool, trust me"
-is_stackable = false
+description = "Applies posion"
+isStackable = false

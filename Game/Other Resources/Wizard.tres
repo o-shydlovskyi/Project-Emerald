@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ClassData" load_steps=4 format=3 uid="uid://bqqftavel1ex7"]
+
+[ext_resource type="Script" path="res://Other Resources/ClassData.gd" id="1_xmucv"]
+[ext_resource type="Resource" uid="uid://bgtfvi34db85a" path="res://Other Resources/Items/Poisoned-Sword.tres" id="2_dafcc"]
+[ext_resource type="SpriteFrames" uid="uid://br52160fsdlj0" path="res://Other Resources/wizard-ani-frames.tres" id="2_ouqst"]
+
+[resource]
+script = ExtResource("1_xmucv")
+mmainAttribute = 1
+name = "Wizard"
+texture = ExtResource("2_ouqst")
+strength = 3
+intelligence = 5
+agility = 3
+startItems = [ExtResource("2_dafcc")]
