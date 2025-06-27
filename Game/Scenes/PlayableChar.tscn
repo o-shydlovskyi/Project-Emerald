@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cgvcvtxq5gck3"]
 
-[ext_resource type="Script" path="res://controls.gd" id="1_fp5q6"]
+[ext_resource type="Script" path="res://Scripts/PlayerChar.gd" id="1_fp5q6"]
 [ext_resource type="SpriteFrames" uid="uid://br52160fsdlj0" path="res://Other Resources/wizard-ani-frames.tres" id="2_d2850"]
 [ext_resource type="AudioStream" uid="uid://cts5pab0vicyq" path="res://Sounds/walk.wav" id="3_jln5j"]
 

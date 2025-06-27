@@ -1,4 +1,4 @@
-class_name ClassData
+class_name PlayerClassData
 extends Resource
 
 enum mainAttribute {Strength,Intelligence,Agility}

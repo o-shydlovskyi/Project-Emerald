@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://pv6u5hvlhquj"]
+[gd_scene load_steps=7 format=3 uid="uid://pv6u5hvlhquj"]
 
+[ext_resource type="Script" path="res://Maps/world.gd" id="1_h6qht"]
 [ext_resource type="Theme" uid="uid://t5txhi3apmdk" path="res://Other Resources/ui-kit.tres" id="2_34wwu"]
-[ext_resource type="Script" path="res://uiHandler.gd" id="2_orelf"]
 [ext_resource type="PackedScene" uid="uid://q0i2ct2r6bkf" path="res://landscape.gltf" id="3_3qucl"]
+[ext_resource type="Script" path="res://Scripts/uiHandler.gd" id="3_7cfn4"]
 [ext_resource type="Texture2D" uid="uid://c8fgqbmhfu11v" path="res://Textures/backpack.png" id="3_cujr7"]
+[ext_resource type="PackedScene" uid="uid://cgvcvtxq5gck3" path="res://Scenes/PlayableChar.tscn" id="4_fmb6b"]
 
 [node name="world" type="Node3D"]
+script = ExtResource("1_h6qht")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.707107, -0.454519, 0.541675, 0, 0.766045, 0.642787, -0.707107, -0.454519, 0.541675, 0.75, 14, 0.75)
@@ -48,7 +51,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("2_orelf")
+script = ExtResource("3_7cfn4")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="UI"]
 layout_mode = 0
@@ -102,3 +105,6 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
 theme_override_constants/shadow_outline_size = 1
 text = "dkldld"
+
+[node name="PlayableCharacter" parent="." instance=ExtResource("4_fmb6b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.10204, -0.557975, 4.83924)

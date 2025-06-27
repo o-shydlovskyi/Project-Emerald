@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ClassData" load_steps=6 format=3 uid="uid://bqqftavel1ex7"]
+[gd_resource type="Resource" script_class="PlayerClassData" load_steps=6 format=3 uid="uid://bqqftavel1ex7"]
 
 [ext_resource type="Script" path="res://Scripts/ClassData.gd" id="1_xjo12"]
 [ext_resource type="SpriteFrames" uid="uid://br52160fsdlj0" path="res://Other Resources/wizard-ani-frames.tres" id="2_ouqst"]
