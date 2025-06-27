@@ -8,7 +8,6 @@ var playerClass: PlayerClassData
 
 
 func _class_selection():
-	
 	playerClass = preload("res://Other Resources/Wizard.tres")
 	currentHealth = playerClass.strength*0.5
 	maxHealth = playerClass.strength*0.5
@@ -31,16 +30,19 @@ var fall_acceleration = 25
 var is_moving
 var target_velocity = Vector3.ZERO
 
-
-
-func _ready():
+func _init() -> void:
 	_class_selection()
-	print("Output",charSpeed)
-	sprite.connect("frame_changed",_on_animation_started)
 	inventory = PlayerInventory.new()
 	for i in playerClass.startItems:
 		inventory.add_item(i)
-	print(inventory.items)
+
+
+func _ready():
+
+	print("Output",charSpeed)
+	sprite.connect("frame_changed",_on_animation_started)
+
+		
 	
 	var tween = get_tree().create_tween()
 	tween.tween_property($Camera3D, "size", 8, 1).set_trans(Tween.TRANS_SINE)

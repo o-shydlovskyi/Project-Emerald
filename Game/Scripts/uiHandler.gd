@@ -5,15 +5,15 @@ extends Control
 	
 func _ready() -> void:
 	
-	$Button.connect("toggled",_output)
+	$InvButton.connect("toggled",_output)
 	
 	var player = $"../PlayableCharacter"
+	
 	if player == null:
 		print("Player not found!")
 		return
 	
-	var playerInv = player.inventory
-	if playerInv == null:
+	if player.inventory == null:
 		print("Inventory not initialized!")
 		return
 	
@@ -21,17 +21,22 @@ func _ready() -> void:
 	
 
 # INVENTORY CODE #
-	for i in playerInv.inventory.size:
+	for i in player.inventory.size:
 		var slot := InventorySlot.new()
 		slot.init(ItemData.Type.Weapon, Vector2(16,16))
 		%InvGrid.add_child(slot)
-
-	for i in range(playerInv.inventory.size):
-		var item = playerInv.inventory.items[i]
+		
+	await player
+	for i in range(player.inventory.items.size()):
+		var item = player.inventory.items[i]
+		print("Slotadded")
 		if item != null:
 			var item_node = InventoryItem.new()
 			item_node.init(item)
 			%InvGrid.get_child(i).add_child(item_node)
+			
+	
+
 
 
 func _output(state: bool):

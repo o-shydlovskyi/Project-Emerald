@@ -2,12 +2,13 @@ class_name PlayerInventory
 
 extends Node
 
-var items : Array[ItemData]
-var size = 8
+var items : Array[ItemData] = []
+var size = 12
 
 
 func add_item(itm:ItemData):
 	items.append(itm)
+	print("Added item:",itm.name)
 
 func remove_item(itm):
 	items.erase(itm)

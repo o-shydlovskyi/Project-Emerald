@@ -41,6 +41,7 @@ theme_override_constants/margin_bottom = 8
 
 [node name="InvGrid" type="GridContainer" parent="CanvasLayer/Inventory/MarginContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("2_34wwu")
@@ -60,7 +61,7 @@ offset_top = 2.0
 offset_right = 1153.0
 offset_bottom = 42.0
 
-[node name="Button" type="Button" parent="UI"]
+[node name="InvButton" type="Button" parent="UI"]
 layout_mode = 0
 offset_left = 208.0
 offset_top = 16.0
