@@ -17,6 +17,10 @@ func _ready() -> void:
 		print("Inventory not initialized!")
 		return
 	
+
+	
+
+# INVENTORY CODE #
 	for i in playerInv.inventory.size:
 		var slot := InventorySlot.new()
 		slot.init(ItemData.Type.Weapon, Vector2(16,16))
@@ -28,10 +32,6 @@ func _ready() -> void:
 			var item_node = InventoryItem.new()
 			item_node.init(item)
 			%InvGrid.get_child(i).add_child(item_node)
-	
-
-# INVENTORY CODE #
-	
 
 
 func _output(state: bool):

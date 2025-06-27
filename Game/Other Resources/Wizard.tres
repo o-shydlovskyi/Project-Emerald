@@ -13,5 +13,5 @@ name = "Wizard"
 texture = ExtResource("2_ouqst")
 strength = 3
 intelligence = 5
-agility = 3
-startItems = Array[ExtResource("2_r31hv")]([ExtResource("3_m2tbc"), ExtResource("4_mdmim"), null])
+agility = 6
+startItems = Array[ExtResource("2_r31hv")]([ExtResource("3_m2tbc"), ExtResource("4_mdmim")])
