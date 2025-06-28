@@ -41,10 +41,10 @@ func _ready() -> void:
 
 func _output(state: bool):
 	if state:
-		%InvGrid.show()
+		%InventoryUI.show()
 		print("show")
 	else:
-		%InvGrid.hide()
+		%InventoryUI.hide()
 		print("show")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

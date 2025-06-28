@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://11pqreyx8kab"]
+
+[ext_resource type="Script" path="res://Resources/ItemTooltip.gd" id="1_8k4ii"]
+
+[node name="ItemTooltip" type="Container"]
+offset_right = 146.0
+offset_bottom = 28.0
+script = ExtResource("1_8k4ii")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "item.name"
+
+[node name="DescLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "desc"

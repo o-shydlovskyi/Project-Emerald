@@ -2,6 +2,7 @@ class_name InventoryItem
 extends TextureRect
 
 @export var data: ItemData
+static var TooltipScene: PackedScene = preload("res://Resources/ItemTooltip.tscn")
 
 func init(d: ItemData) -> void:
 	data = d
@@ -35,3 +36,12 @@ func make_drag_preview(at_position: Vector2):
 	c.add_child(t)
 	
 	return c
+
+# Godot calls this to get custom tooltip Control
+func _make_custom_tooltip(for_text: String) -> Object:
+	if TooltipScene:
+		var tooltip = TooltipScene.instantiate()
+		if tooltip.has_method("set_item_data"):
+			tooltip.set_item_data(data)
+		return tooltip
+	return null
