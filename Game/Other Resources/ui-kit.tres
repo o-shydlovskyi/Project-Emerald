@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://t5txhi3apmdk"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://t5txhi3apmdk"]
 
 [ext_resource type="Texture2D" uid="uid://ckhl3afe6nxgw" path="res://Textures/panel-texture.png" id="1_kw1va"]
 [ext_resource type="Texture2D" uid="uid://dgcy1hsr20r3g" path="res://Textures/slot-texture.png" id="1_t7j6c"]
@@ -35,6 +35,13 @@ expand_margin_top = 1.0
 expand_margin_right = 1.0
 expand_margin_bottom = 1.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0dqi3"]
+texture = ExtResource("1_t7j6c")
+texture_margin_left = 7.0
+texture_margin_top = 7.0
+texture_margin_right = 7.0
+texture_margin_bottom = 7.0
+
 [resource]
 default_font = ExtResource("2_2vrie")
 default_font_size = 12
@@ -46,11 +53,15 @@ HeaderSmall/constants/outline_size = 1
 HeaderSmall/font_sizes/font_size = 7
 Panel/styles/panel = SubResource("StyleBoxTexture_w8nc8")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_144r8")
+PopupPanel/constants/close_h_offset = 20
+PopupPanel/constants/close_v_offset = 20
+PopupPanel/font_sizes/title_font_size = 8
+PopupPanel/styles/panel = SubResource("StyleBoxTexture_0dqi3")
 TooltipLabel/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 TooltipLabel/colors/font_outline_color = Color(0, 0, 0, 1)
 TooltipLabel/colors/font_shadow_color = Color(0, 0, 0, 0)
 TooltipLabel/constants/outline_size = 0
 TooltipLabel/constants/shadow_offset_x = 1
 TooltipLabel/constants/shadow_offset_y = 1
-TooltipLabel/font_sizes/font_size = 7
+TooltipLabel/font_sizes/font_size = 4
 TooltipLabel/fonts/font = ExtResource("2_2vrie")

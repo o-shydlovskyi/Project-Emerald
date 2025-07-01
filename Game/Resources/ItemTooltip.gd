@@ -2,9 +2,9 @@
 extends Control
 
 #@onready var name_label = %NameLabel
+#
+#func _ready() -> void:
 
-func _ready() -> void:
-	custom_minimum_size = Vector2(200, 100)
 
 func set_item_data(data) -> void:
 	var label = %NameLabel

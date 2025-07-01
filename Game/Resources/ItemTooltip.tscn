@@ -3,19 +3,30 @@
 [ext_resource type="Script" path="res://Resources/ItemTooltip.gd" id="1_8k4ii"]
 
 [node name="ItemTooltip" type="Container"]
-offset_right = 146.0
+custom_minimum_size = Vector2(140, 20)
+offset_right = 52.0
 offset_bottom = 28.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 script = ExtResource("1_8k4ii")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(140, 20)
 layout_mode = 2
 
 [node name="NameLabel" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 8
 text = "item.name"
+autowrap_mode = 3
 
 [node name="DescLabel" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 0.376471)
+theme_override_font_sizes/font_size = 8
 text = "desc"
+autowrap_mode = 3
